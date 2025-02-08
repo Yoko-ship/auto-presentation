@@ -1,0 +1,59 @@
+body{
+    background-color: #FDE0E1;
+    font-family: inherit;
+}
+
+
+.card-presentation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    padding: 10px;
+}
+.card-one{
+    white-space: normal;
+    text-align: start;
+    background: white;
+    padding-inline: 0px;
+    font-size: 20px;
+    word-wrap: word-break;
+    border-radius: 10px;
+}
+
+.card-top img{
+    width: 100%;
+    border-radius: 10px;
+}
+.card-presentation button{
+    background: none;   
+    border: none;
+    cursor: pointer;
+}
+
+.card-presentation button:hover{
+    transition: 300ms;
+    transform: scale(1.09);
+}
+.card-presentation button:focus{
+    outline: none;
+    border: 5px solid #8EB7E1;
+    border-radius: 10px;
+}
+
+
+.card-bot-two{
+    padding: 10px;
+}
+.card-bot-two h2{
+    color: #585454;
+}
+
+.text{
+    padding-top: 15px;
+    color: #726E6E;
+}
+
+.card-presentation a{
+    text-decoration: none;
+}

@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    padding: 20px;
+    background-color: #F7F3F2;
+}
+header ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+header a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+header li{
+    list-style: none;
+    color: black;
+    font-size: 18px;
+
+}
+header li:hover{
+    transform: scale(1.1);
+}

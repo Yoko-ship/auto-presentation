@@ -1,0 +1,11 @@
+.reveal{
+    position: absolute;
+}
+.reveal img{
+    width: 250px;
+}
+.title{
+    font-size: 10px;
+    color: red  ;
+
+}
