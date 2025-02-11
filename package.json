@@ -1,12 +1,12 @@
 {
   "name": "auto-presentation",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "npm run build",
-    "lint": "eslint .",
+    "lint": "eslint",
     "preview": "vite preview",
     "start": "npm run build && node server/backend.cjs",
     "install": "npm install && npm install --prefix server"
