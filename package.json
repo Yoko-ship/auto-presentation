@@ -1,14 +1,14 @@
 {
-  "name": "auto-presentation",
+  "name": "react-first",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build",
-    "lint": "eslint",
+    "build": "vite build",
+    "lint": "eslint .",
     "preview": "vite preview",
-    "start": "npm run build && node server/backend.cjs"
+    "start": "node server/backend.cjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
