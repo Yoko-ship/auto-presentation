@@ -6,15 +6,8 @@
     {
       "slideNumber": 1,
       "title": "Заголовок слайда",
-      "description": "Описание слайда с подробной и побольше информацией.",
-      "image": "Описание для генерирование настоящей-картинки очень простым языком но на английском языке"
+      "description": "Create a highly detailed and informative description.Cover its key features, history, purpose, functionality, and any relevant background information. Explain how it works, why it is important, and how it compares to similar things. Use precise language, examples, and technical or contextual details to make the description rich and meaningful.But in Russian.Запомни,без никаких 'Меня зовут' ",
     },
-    {
-      "slideNumber": 2,
-      "title": "Заголовок второго слайда",
-      "description": "Описание слайда с подробной и побольше информацией.",
-      "image": "Описание для генерирование настоящей-картинки очень простым языком но на английском языке"
-    }
   ]
 }
 

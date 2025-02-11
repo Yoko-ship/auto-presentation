@@ -8,7 +8,6 @@ function Create() {
 
     const navigation = () =>{
         navigate("/generate")
-        window.location.reload()
     }
   return (
     <div className='card-presentation'>

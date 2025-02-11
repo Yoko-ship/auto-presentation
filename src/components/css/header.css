@@ -8,7 +8,7 @@ header{
 }
 header ul{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 header a{
@@ -24,4 +24,29 @@ header li{
 }
 header li:hover{
     transform: scale(1.1);
+}
+
+
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    flex-direction: column;
+}
+.error h2{
+    color: red
+}
+
+.hint{
+    padding: 15px;
+    margin: 10px;
+}
+.hint a{
+    text-decoration: none;
+    color: rgba(104, 59, 59, 0.945);
+    font-size: 20px;
+}
+.link:hover{
+    color: black;
 }
