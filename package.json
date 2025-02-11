@@ -8,8 +8,7 @@
     "build": "npm run build",
     "lint": "eslint",
     "preview": "vite preview",
-    "start": "npm run build && node server/backend.cjs",
-    "install": "npm install"
+    "start": "npm run build && node server/backend.cjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
