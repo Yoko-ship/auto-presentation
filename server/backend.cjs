@@ -3,11 +3,20 @@ const app = express()
 const bodyParser = require("body-parser")
 const cors = require("cors")
 const dotenv = require("dotenv/config")
+const path = require("path")
 const { GoogleGenerativeAI } = require("@google/generative-ai")
 app.use(cors())
 app.use(bodyParser.json())
 const port = process.env.PORT
+app.use(express.static(path.join(__dirname,"../dist")))
 
+app.get("/api/hello",(req,res) =>{
+  res.json({message:"HEllo"})
+})
+
+app.get("*",(req,res) =>{
+  res.sendFile(path.join(__dirname,"../dist",'index.html'))
+})
 
 app.post("/generate", async function(request, response) {
     const prompt = request.body.presentationPrompt;
