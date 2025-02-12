@@ -36,7 +36,7 @@ function Create_page({ setAction, setSelectValue }) {
     setPrompt("")
     navigate("/waiting")
     try {
-      const response = await fetch("http://localhost:3000/generate", {
+      const response = await fetch("https://auto-presentation.onrender.com/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
