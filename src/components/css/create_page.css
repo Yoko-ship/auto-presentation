@@ -60,6 +60,9 @@
     justify-content: center;
     padding: 15px;
 }
+.css-hlgwow{
+    width: 100px;
+}
 
 .select-div select{
     border-radius: 10px;
@@ -122,12 +125,7 @@
 .theme img{
     width: 100%;
 }
-.theme2{
-}
-.theme3{
-}
-.theme4{
-}
+
 
 .warning{
     display: flex;
