@@ -5,7 +5,10 @@ import jsonText from "./test.txt?raw";
 import { useNavigate } from "react-router-dom";
 import Grid from "./Grid";
 import Select from "react-select"
-
+import firstImage from "../assets/23_afcas12.jpg"
+import secondImage from "../assets/59276.jpg"
+import thirdImage from "../assets/patrick-tomasso-QMDap1TAu0g-unsplash.jpg"
+import fourthImage from "../assets/v915-wit-010-a.jpg"
 
 function Create_page({ setAction, setSelectValue }) {
   const backgroundTheme = useRef(1);
@@ -61,10 +64,10 @@ function Create_page({ setAction, setSelectValue }) {
 
   //* select
   const options = [
-    {value: "1",label:<div className="theme1"></div>},
-    {value: "2",label:<div className="theme2"></div>},
-    {value: "3",label:<div className="theme3"></div>},
-    {value: "4",label:<div className="theme4"></div>},
+    {value: "1",label:<div className="theme"><img src={firstImage}></img></div>},
+    {value: "2",label:<div className="theme"><img src={secondImage}></img></div>},
+    {value: "3",label:<div className="theme"><img src={thirdImage}></img></div>},
+    {value: "4",label:<div className="theme"><img src={fourthImage}></img></div>},
   ]
 
   const cardOptions = [
