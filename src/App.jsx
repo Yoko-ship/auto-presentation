@@ -6,6 +6,7 @@ import PresentMaker from "./components/PresentMaker";
 import {useState } from "react";
 import Waiting from "./components/Waiting";
 import Error from "./components/Error";
+import Contacts from "./components/Contacts";
 
 function App() {
   const [action, setAction] = useState("");
@@ -23,6 +24,9 @@ function App() {
           <ul>
             <li>
               <Link to="/">Создать презентацию</Link>
+            </li>
+            <li>
+              <Link to="/contacts">Контакты</Link>
             </li>
           </ul>
         </header>
@@ -58,6 +62,7 @@ function App() {
             }
           ></Route>
           <Route path="/error" element={<Error/>}></Route>
+          <Route path="/contacts" element={<Contacts/>}></Route>
         </Routes>
       </Router>
     </>
