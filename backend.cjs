@@ -7,6 +7,7 @@ const path = require("path")
 const { GoogleGenerativeAI } = require("@google/generative-ai")
 app.use(cors())
 app.use(bodyParser.json())
+const HOST = '0.0.0.0'
 const port = process.env.PORT
 app.use(express.static(path.join(__dirname, "dist")));
 
@@ -30,7 +31,7 @@ app.post("/generate", async function(request, response) {
   });
 
 
-  app.listen(port,() =>{
+  app.listen(port,HOST,() =>{
     console.log("Сервер работает на портe 3000")
 })
 
