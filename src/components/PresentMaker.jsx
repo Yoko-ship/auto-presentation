@@ -57,39 +57,25 @@ function PresentMaker(props) {
       } else {
         slide.background = { path: thirdImage };
       }
-      slide.addShape(pres.ShapeType.rect, {
-        x: 1,
-        y: 0,
-        w: 8,
-        h: 0.5,
-        fill: { color: "0070C0" },
-      });
-      slide.addShape(pres.ShapeType.line, {
-        x: 2,
-        y: 1.5,
-        w: 6,
-        h: 0,
-        line: { color: "000000", width: 2 },
-      });
       slide.addText(slideData.title, {
         x: 1.5,
-        y: 1.0,
+        y: 0.5,
         w: "80%",
         color: "363636",
         fill: { color: "F1F1F1" },
         align: pres.AlignH.center,
         fontFace: "Arial",
-        fontSize: 24,
+        fontSize: 25,
       });
       slide.addText(slideData.description, {
         x: 1.5,
-        y: 3.0,
+        y: 2.8,
         w: "80%",
         margin: 1,
         color: "363636",
         fill: { color: "F1F1F1" },
         align: pres.AlignH.center,
-        fontSize: 16,
+        fontSize: 18,
         fontFace: "Arial",
       });
     });

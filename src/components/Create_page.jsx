@@ -16,6 +16,7 @@ function Create_page({ setAction, setSelectValue }) {
   const [prompt, setPrompt] = useState("");
   const [warning,setWarning] = useState(false)
   const [cardNumbers,setCardNumbers] = useState(8)
+  const [manners,setManners] = useState("Простыми словами")
 
   const promptExample = "Управление спортом";
   const promptExample2 = "Бизнес-предложения по запуску нового IT-продукта.";
@@ -34,7 +35,7 @@ function Create_page({ setAction, setSelectValue }) {
     `Сгенерируй JSON презентацию про ${prompt}.
       Сгенерируй ${cardNumbers} слайдов
       Соблюдай логическую последовательность и структуру повествования. 
-      Описание каждого слайда должно быть четким,подробным, информативным и соответствовать его заголовку.От первого лица.Словами человека` +
+      Описание каждого слайда должно быть четким,подробным, информативным и соответствовать его заголовку.От первого лица.${manners}` +
     jsonText;
     setPrompt("")
     navigate("/waiting")
@@ -48,7 +49,7 @@ function Create_page({ setAction, setSelectValue }) {
       });
       const json = await response.json();
       const text = json.response.candidates[0].content.parts[0].text.trim();
-      const cleanedText = text.replace(/^```json\n/, "").replace(/\n```$/, "");
+      const cleanedText = text.replace(/^```json\n/, "").replace(/\n```$/, "").replaceAll("*","");
       const jsonText = JSON.parse(cleanedText);
       setAction(jsonText);
       navigate("/present")
@@ -75,6 +76,12 @@ function Create_page({ setAction, setSelectValue }) {
     {value: "10",label:<div className="">10 слайдов</div>},
     {value: "12",label:<div className="">12 слайдов</div>},
   ]
+  
+  const textManners = [
+    {value:"Простыми словами",label:<div>Простой текст</div>},
+    {value:"Профессиональными словами",label:<div>Профессиональный текст</div>},
+    {value:"Формальный текст",label:<div>Формальный текст</div>},
+  ]
 
 
   return (
@@ -88,14 +95,15 @@ function Create_page({ setAction, setSelectValue }) {
             </div>
           </div>
           <div className="select-div">
-            <Select options={cardOptions} onChange={(e) => setCardNumbers(e.value)}></Select>
+            <Select options={cardOptions} onChange={(e) => setCardNumbers(e.value)} placeholder="Слайды"></Select>
+            <Select options={textManners} onChange={(e) => setManners(e.value)} placeholder="Текст"></Select>
           </div>
           <div>
             <div className="themes">
               <h2>Выберите фон</h2>
             </div>
             <div className="select-div">
-            <Select options={options} ref={backgroundTheme} onChange={(e) => setSelectValue(e.value)}></Select>
+            <Select options={options} ref={backgroundTheme} onChange={(e) => setSelectValue(e.value)} placeholder="Фон"></Select>
             </div>
           </div>
           <div className="prompt-example">

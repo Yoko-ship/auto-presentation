@@ -64,12 +64,12 @@
     width: 100px;
 }
 
-.select-div select{
-    border-radius: 10px;
+.css-b62m3t-container{
     padding: 8px;
-    font-size: 15px;
+    font-size: 18px;
     outline: none;
 }
+
 .examples{
     display: grid;
     grid-template-columns: repeat(4,1fr);
