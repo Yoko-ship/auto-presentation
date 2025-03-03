@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./css/waiting.css";
-import { useNavigate } from "react-router-dom";
-function Waiting(props) {
+function Waiting() {
 
 
   

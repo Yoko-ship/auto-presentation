@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
 
-function Grid(props) {
+function Grid({ examples,click}) {
   return (
-    <div className='grid' onClick={props.click}>
-        <p>{props.text}</p>
-    </div>
-  )
+    <>
+    {examples.map((example,index) => (
+        <div className="grid" key={index}>
+          <p onClick={() => click(example)}>{example}</p>
+        </div>
+      ))}
+    </>
+      
+  );
 }
 
-export default Grid
+export default Grid;
