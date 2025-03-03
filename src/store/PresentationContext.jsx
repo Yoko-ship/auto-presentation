@@ -27,7 +27,6 @@ function PresentationContext({children}) {
         setSecondName: setSecondName,
         setAction: setAction,
         setSelectedImage:setSelectedImage
-
     }
   return (
     <PresentContext value={ctxValue}>

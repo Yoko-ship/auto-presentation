@@ -131,7 +131,7 @@ function PresentMaker() {
             </div>
           </>
         ) : (
-          <p>test</p>
+          <p></p>
         )}
       </PresentationContext>
     </>

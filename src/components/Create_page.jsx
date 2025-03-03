@@ -1,6 +1,6 @@
 import React, { useRef,useState} from "react";
 import "./css/create_page.css";
-import jsonText from "./test.txt?raw";
+import jsonText from "./prompt.txt?raw";
 import { useNavigate } from "react-router-dom";
 import Grid from "./Grid";
 import Select from "react-select";

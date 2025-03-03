@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useContext } from 'react';
 import { PresentContext } from '../store/PresentationContext';
 function Names({}) {

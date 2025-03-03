@@ -1,7 +1,7 @@
 import React from 'react'
 import img from "../assets/Thumbnail-generate.8e2e4605.svg"
 import "./css/card.css"
-import { Link, useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 
 function Create() {
     const navigate = useNavigate()
