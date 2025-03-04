@@ -29,9 +29,9 @@ function PresentationContext({children}) {
         setSelectedImage:setSelectedImage
     }
   return (
-    <PresentContext value={ctxValue}>
+    <PresentContext.Provider value={ctxValue}>
         {children}
-    </PresentContext>
+    </PresentContext.Provider>
   )
 }
 
