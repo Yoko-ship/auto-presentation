@@ -8,7 +8,7 @@
 .slides section p{
     font-size: 15px;
 }
-.dowload{
+.dowload form {
     display: flex;
     justify-content: end;
     padding: 10px;

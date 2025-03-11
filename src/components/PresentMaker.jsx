@@ -1,4 +1,4 @@
-import React, { useEffect, useRef,useContext } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import Reveal from "reveal.js";
 import "./css/present.css";
 import PptxGenJS from "pptxgenjs";
@@ -8,9 +8,10 @@ import thirdImage from "../assets/patrick-tomasso-QMDap1TAu0g-unsplash.jpg";
 import fourthImage from "../assets/v915-wit-010-a.jpg";
 import PresentationContext from "../store/PresentationContext";
 import { PresentContext } from "../store/PresentationContext";
+import Button from "./Button";
 function PresentMaker() {
-
-  const {name,secondName,action,selectedImage} = useContext(PresentContext)
+  const { name, secondName, action, selectedImage } =
+    useContext(PresentContext);
   const revealRef = useRef(null);
   const revealInstance = useRef(null);
 
@@ -42,25 +43,22 @@ function PresentMaker() {
 
   //* presentation
 
-  const dowloading = () => {
+  const dowloading = async() => {
     let pres = new PptxGenJS();
-    pres.theme = { headFontFace: "Arial Light" };
-    pres.theme = { bodyFontFace: "Arial" };
+    pres.theme = { headFontFace: "Arial Light",bodyFontFace:"Arial"};
     let presentationData = action;
     let background;
     const firstSlide = pres.addSlide();
-    if (selectedImage === "1") {
-      background = firstSlide.background = { path: firstImage };
-    } else if (selectedImage === "2") {
-      background = firstSlide.background = { path: secondImage };
-    } else if (selectedImage === "3") {
-      background = firstSlide.background = { path: thirdImage };
-    } else if (selectedImage === "4") {
-      background = firstSlide.background = { path: fourthImage };
-    } else {
-      background = firstSlide.background = { path: thirdImage };
+    const backgrounds = {
+      "1":firstImage,
+      "2":secondImage,
+      "3":thirdImage,
+      "4":fourthImage,
     }
-    firstSlide.addText(action.presentationTitle, {
+    const selectedBackground = backgrounds[selectedImage] || thirdImage;
+    background = {path:selectedBackground}
+    firstSlide.background = background
+    firstSlide.addText(action.presentationTitle,{
       x: 1.5,
       y: 0.5,
       w: "80%",
@@ -68,8 +66,9 @@ function PresentMaker() {
       fill: { color: "F1F1F1" },
       fontFace: "Times New Roman",
       fontSize: 23,
+      align:pres.AlignH.center
     });
-    firstSlide.addText(`${secondName } ${name}`,{
+    firstSlide.addText(`${secondName} ${name}`, {
       x: 2.5,
       y: 5,
       w: "80%",
@@ -77,6 +76,7 @@ function PresentMaker() {
       fill: { color: "F1F1F1" },
       fontFace: "Times New Roman",
       fontSize: 23,
+      align:pres.AlignH.center
     });
 
     presentationData.slides.forEach((slideData, index) => {
@@ -104,7 +104,7 @@ function PresentMaker() {
         fontFace: "Times New Roman",
       });
     });
-    pres.writeFile({ fileName: "Presentation.pptx" });
+    await pres.writeFile({ fileName: "Presentation.pptx" });
   };
 
   let informations = action;
@@ -115,11 +115,15 @@ function PresentMaker() {
         {informations ? (
           <>
             <div className="dowload">
-              <button onClick={dowloading}>
-                <p>Cкачать</p>
-              </button>
+              <form
+                action={async () => {
+                  await new Promise((res) => setTimeout(res, 1000));
+                }}
+              >
+                <Button dowload={dowloading} />
+              </form>
             </div>
-            <div className="reveal" ref={revealRef}>
+            <div className="reveal"   ref={revealRef}>
               <div className="slides">
                 {informations.slides.map((infoData, index) => (
                   <section key={index}>

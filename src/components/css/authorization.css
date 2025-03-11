@@ -1,0 +1,76 @@
+.form{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.form form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    border: 1px solid #0A6A5F;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 500px;
+    background-color: #0A6A5F;
+}
+.form form label{
+    color: white;
+    font-size: 22px;
+    text-align: center;
+
+}
+.form form input{
+    padding: 10px;
+    width: 95%;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    font-size: 20px;
+}
+.form form button{
+    margin: 0 auto;
+    border: none;
+    padding: 7px;
+    background-color: #45a197;
+    color: white;
+    font-size: 20px;
+    width: 50%;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.form form button:hover{
+    background-color: #67b6ad;
+}
+.register{
+    padding: 15px;
+}
+.register a{
+    text-decoration: none;
+    font-size: 20px;
+}
+.register a:hover{
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.info h2{
+    color: white;
+}
+.info p{
+    color: #ccc;
+    font-size: 17px;
+    padding-top: 10px;
+}
+.password{
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    gap: 10px;
+}
+.password label{
+    display: block;
+}

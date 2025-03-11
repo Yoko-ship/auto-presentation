@@ -142,7 +142,7 @@
     display: flex;
     justify-content: center;
     gap: 10px;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
 .names input{
@@ -158,8 +158,9 @@
 }
 .names label{
     color: white;
-    font-size: 20px;
+    font-size: 20px;    
 }
+
 
 @media screen and (max-width:600px){
     .examples{
@@ -174,22 +175,37 @@
         display: flex;
     }
     .input-div input{
-        padding: 0;
+        padding: 10px;
         width: 100%;
-        font-size: 18px;
+        font-size: 16px;
     }
-    .div-btn button{
-        padding: 8px;
+    .div-btn{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+    .names{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .css-b62m3t-container{
+        font-size: 15px;
+    }
+    .css-1nmdiq5-menu img{
+        width: 50%;
     }
 
 }
+
+
 @media screen and (min-width:600px) and (max-width:950px) {
     .examples{
         display: grid;
         grid-template-columns: repeat(3,1fr);
     }
-
-    
 }
 @media screen and (min-width:1100px) {
     .input-div input{

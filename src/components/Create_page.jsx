@@ -1,18 +1,17 @@
-import React, { useRef,useState} from "react";
+import React, { useRef, useState } from "react";
 import "./css/create_page.css";
 import jsonText from "./prompt.txt?raw";
 import { useNavigate } from "react-router-dom";
-import Grid from "./Grid";
-import Select from "react-select";
 import firstImage from "../assets/23_afcas12.jpg";
 import secondImage from "../assets/59276.jpg";
 import thirdImage from "../assets/patrick-tomasso-QMDap1TAu0g-unsplash.jpg";
 import fourthImage from "../assets/v915-wit-010-a.jpg";
-import examplePrompts from "./examplePrompts";
 import Names from "./Names";
 import { PresentContext } from "../store/PresentationContext";
 import { useContext } from "react";
-
+import SelectComponents from "./SelectComponents";
+import { cardOptions } from "./options.js";
+import { textManners } from "./options.js";
 
 function Create_page() {
   const backgroundTheme = useRef(1);
@@ -21,7 +20,7 @@ function Create_page() {
   const [warning, setWarning] = useState(false);
   const [cardNumbers, setCardNumbers] = useState(8);
   const [manners, setManners] = useState("Простыми словами");
-  const {setAction,setSelectedImage} = useContext(PresentContext)
+  const { setAction, setSelectedImage } = useContext(PresentContext);
 
   const BtnHandler = async () => {
     if (prompt) {
@@ -63,7 +62,6 @@ function Create_page() {
     }
   };
 
-  //* select
   const options = [
     {
       value: "1",
@@ -99,93 +97,62 @@ function Create_page() {
     },
   ];
 
-  const cardOptions = [
-    { value: "8", label: <div className="">8 слайдов</div> },
-    { value: "10", label: <div className="">10 слайдов</div> },
-    { value: "12", label: <div className="">12 слайдов</div> },
-  ];
-
-  const textManners = [
-    { value: "Простыми словами", label: <div>Простой текст</div> },
-    {
-      value: "Профессиональными словами",
-      label: <div>Профессиональный текст</div>,
-    },
-    { value: "Формальный текст", label: <div>Формальный текст</div> },
-  ];
-
-
-
 
   return (
     <>
-        <div className="container">
-          <div className="widgets">
-            <div className="name">
-              <h2>Генерировать</h2>
-              <div className="information">
-                <p>Что хотите создать прямо сейчас</p>
-              </div>
+      <div className="container">
+        <div className="widgets">
+          <div className="name">
+            <h2>Генерировать</h2>
+          </div>
+          <div className="select-div">
+            <SelectComponents
+              option={cardOptions}
+              onChange={setCardNumbers}
+              placeholder="Слайды"
+            />
+            <SelectComponents
+              option={textManners}
+              onChange={setManners}
+              placeholder="Текст"
+            />
+          </div>
+          <Names />
+          <div>
+            <div className="themes">
+              <h2>Выберите фон</h2>
             </div>
             <div className="select-div">
-              <Select
-                options={cardOptions}
-                onChange={(e) => setCardNumbers(e.value)}
-                placeholder="Слайды"
-              ></Select>
-              <Select
-                options={textManners}
-                onChange={(e) => setManners(e.value)}
-                placeholder="Текст"
-              ></Select>
-            </div>
-            <Names />
-            <div>
-              <div className="themes">
-                <h2>Выберите фон</h2>
-              </div>
-              <div className="select-div">
-                <Select
-                  options={options}
-                  ref={backgroundTheme}
-                  onChange={(e) => setSelectedImage(e.value)}
-                  placeholder="Фон"
-                ></Select>
-              </div>
-            </div>
-            <div className="prompt-example">
-              <hr aria-orientation="horizontal"></hr>
-              <p>Пример запроса</p>
-              <hr aria-orientation="horizontal"></hr>
-            </div>
-            <div className="examples">
-              <Grid
-                examples={examplePrompts}
-                click={setPrompt}
+              <SelectComponents
+                option={options}
+                onChange={setSelectedImage}
+                placeholder="Фон"
+                ref={backgroundTheme}
               />
             </div>
-            {warning && (
-              <div className="warning">
-                <p>Пожалуста напишите тему</p>
-              </div>
-            )}
-            <div className="input-div">
-              <input
-                type="text"
-                placeholder="Опишите что вы хотите создать"
-                onChange={(e) => setPrompt(e.target.value)}
-                name="name"
-                value={prompt}
-                required
-              />
-              <div className="div-btn">
-                <button onClick={BtnHandler} type="button">
-                  Генерировать
-                </button>
-              </div>
+          </div>
+          {warning && (
+            <div className="warning">
+              <p>Пожалуста напишите тему</p>
+            </div>
+          )}
+          <div className="input-div">
+            <input
+              type="text"
+              placeholder="Опишите что вы хотите создать"
+              onChange={(e) => setPrompt(e.target.value)}
+              name="name"
+              value={prompt}
+              required
+            />
+            <div className="div-btn">
+              <button onClick={BtnHandler} type="button">
+                Генерировать
+              </button>
             </div>
           </div>
         </div>
+      </div>
     </>
   );
 }

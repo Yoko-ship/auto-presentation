@@ -1,5 +1,4 @@
 import { HashRouter as Router, Route, Routes, Link } from "react-router-dom";
-import "./components/css/header.css";
 import Create from "./components/Create";
 import Create_page from "./components/Create_page";
 import PresentMaker from "./components/PresentMaker";
@@ -7,23 +6,16 @@ import Waiting from "./components/Waiting";
 import Error from "./components/Error";
 import Contacts from "./components/Contacts";
 import PresentationContext from "./store/PresentationContext";
+import Header from "./components/Header";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
-
   return (
     <>
       <PresentationContext>
         <Router>
-          <header>
-            <ul>
-              <li>
-                <Link to="/">Создать презентацию</Link>
-              </li>
-              <li>
-                <Link to="/contacts">Контакты</Link>
-              </li>
-            </ul>
-          </header>
+          {/* <Header/> */}
           <Routes>
             <Route path="/" element={<Create />}></Route>
             <Route path="/generate" element={<Create_page />}></Route>
@@ -31,6 +23,8 @@ function App() {
             <Route path="/waiting" element={<Waiting />}></Route>
             <Route path="/error" element={<Error />}></Route>
             <Route path="/contacts" element={<Contacts />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/register" element={<Register/>}></Route>
           </Routes>
         </Router>
       </PresentationContext>

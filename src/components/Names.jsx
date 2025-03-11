@@ -7,9 +7,7 @@ function Names({}) {
 
   return (
    <div className="names">
-    <label>Имя</label>
     <input type="text" placeholder="Имя" onChange={(e) => setName(e.target.value)}/>
-    <label>Фамилия</label>
     <input type="text" placeholder="Фамилия" onChange={(e) => setSecondName(e.target.value)}/>
   </div>
   )
