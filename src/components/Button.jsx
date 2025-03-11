@@ -10,7 +10,7 @@ function Button({dowload}) {
     },[pending])
     
   return (
-      <button onClick={dowload} disabled={pending}>
+      <button onClick={dowload} onTouchStart={dowload} disabled={pending}>
         <p>{pending ? "Идет скачивание": "Cкачать"}</p>
       </button>
   );
