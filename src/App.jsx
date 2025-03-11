@@ -15,7 +15,7 @@ function App() {
     <>
       <PresentationContext>
         <Router>
-          {/* <Header/> */}
+          <Header/>
           <Routes>
             <Route path="/" element={<Create />}></Route>
             <Route path="/generate" element={<Create_page />}></Route>

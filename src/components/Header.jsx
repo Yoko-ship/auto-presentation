@@ -13,9 +13,9 @@ function Header() {
           <li>
             <Link to="/contacts">Контакты</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/login">Войти</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>
